@@ -1,6 +1,31 @@
 <div class="row">
-    <h2>Article view</h2>
-    <a ui-sref="^.list()" class="button">Articles List</a>
-    <pre>{{articleView.current|json}}</pre>
+
+    <div class="container-fluid">
+        <a ui-sref="^.list()" class="btn btn-default">Articles List</a>
+
+        <h2>{{articleView.current.fullTitle}}</h2>
+
+        <hr>
+
+        <p><span class="glyphicon glyphicon-time"></span> Posted on {{articleView.current.createdAt | date : shortDate}}</p>
+
+        <hr>
+
+        <p class="lead">{{articleView.current.summary}}</p>
+        <p>{{articleView.current.fullText}}</p>
+
+        <hr>
+
+        <h4>
+            Share:
+        </h4>
+
+        <p>
+            <a href="https://www.facebook.com/sharer/sharer.php?u={{articleUrl}}&t={{articleView.current.shortTitle}}" class="btn btn-primary">Facebook</a>
+            <a href="https://twitter.com/intent/tweet?source={{articleUrl}}&text={{articleView.current.shortTitle}}" class="btn btn-info">twitter</a>
+            <a href="https://plus.google.com/share?url={{articleUrl}}" class="btn btn-danger">g+</a>
+        </p>
+
+    </div>
 
 </div>

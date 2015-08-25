@@ -15,6 +15,40 @@
                 controllerAs: 'main'
             })
 
+            .state('css', {
+                url: '/css-test',
+                templateUrl: 'app/css-test/css.html',
+                abstract: true
+            })
+
+            .state('css.list', {
+                url: '',
+                templateUrl: 'app/css-test/css.list.html',
+                controller: 'CssController',
+                controllerAs: 'css'
+            })
+
+            .state('css.create', {
+                url: '/create',
+                templateUrl: 'app/css-test/css.edit.html',
+                controller: 'CssEditController',
+                controllerAs: 'cssCreate'
+            })
+
+            .state('css.view', {
+                url: '/:id',
+                templateUrl: 'app/css-test/css.view.html',
+                controller: 'CssViewController',
+                controllerAs: 'cssView'
+            })
+
+            .state('css.edit', {
+                url: '/edit/:id',
+                templateUrl: 'app/css-test/css.edit.html',
+                controller: 'CssEditController',
+                controllerAs: 'cssEdit'
+            })
+
             .state('articles', {
                 abstract: true,
                 url: '/articles',
